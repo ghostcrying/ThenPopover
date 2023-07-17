@@ -208,7 +208,7 @@ final public class ThenPopover: UIViewController {
     }
 }
 
-// MARK: - Button related
+// MARK: - Action related
 
 extension ThenPopover {
     

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ThenPopover"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.license      = "LICENSE"
   s.summary      = "Similar with system alert controller, with custom animation."
   s.description  = <<-EOS

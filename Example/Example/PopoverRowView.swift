@@ -107,7 +107,6 @@ enum PopoverType: CaseIterable, Identifiable {
         case .default:
             self.handleDefault(.scale)
         case .image:
-            // Prepare the popup assets
             let title = "Default Title"
             let message = "Message Default view"
             let image = UIImage(named: "ic_pexels_1")
