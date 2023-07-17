@@ -18,7 +18,6 @@ public extension ThenPopoverTransition {
         }
         
         public enum Corner {
-            
             case topLeft
             case topRight
             case bottomLeft

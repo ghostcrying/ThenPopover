@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ThenPopover"
   s.version      = "0.0.1"
+  s.license      = "LICENSE"
   s.summary      = "Similar with system alert controller, with custom animation."
   s.description  = <<-EOS
   Instructions for installation are in [the README](https://github.com/ghostcrying/ThenPopover).
@@ -10,7 +11,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ghostcrying/ThenPopover.git", :tag => s.version }
   
   s.ios.deployment_target = '11.0'
-  s.source_files = "Sources/**/*"
+  s.source_files = "Sources/**/*.swift"
   s.frameworks = 'Foundation', 'UIKit'
   s.swift_version = '5.0'
   

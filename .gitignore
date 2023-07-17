@@ -66,6 +66,13 @@ playground.xcworkspace
 
 Carthage/Build/
 
+# Example
+Examples/Carthage/
+Examples/Cartfile.resolved
+Examples/Pods/
+Examples/xcuserdata/
+Examples/*.xcworkspace
+
 # Accio dependency management
 Dependencies/
 .accio/
