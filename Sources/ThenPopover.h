@@ -2,7 +2,7 @@
 //  ThenPopover.h
 //  ThenPopover
 //
-//  Created by 陈卓 on 2023/7/14.
+//  Created by ghost on 2023/7/14.
 //
 
 #import <Foundation/Foundation.h>
