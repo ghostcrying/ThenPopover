@@ -10,7 +10,8 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "ThenPopover",
-            targets: ["ThenPopover"]),
+            targets: ["ThenPopover"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,8 +24,8 @@ let package = Package(
             name: "ThenPopover",
             path: "Sources",
             exclude: [
-                "Sources/ThenPopover.h"
-            ]),
+                "Sources/ThenPopover.h",
+            ]
+        ),
     ]
-    
 )

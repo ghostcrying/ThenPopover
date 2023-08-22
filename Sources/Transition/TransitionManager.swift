@@ -1,34 +1,33 @@
-import UIKit
 import Foundation
+import UIKit
 
-final internal class ThenPopoverTransitionManager: NSObject, UIViewControllerTransitioningDelegate {
-    
+internal final class ThenPopoverTransitionManager: NSObject, UIViewControllerTransitioningDelegate {
     var presentedType: ThenPopoverTransition.TransitionType
     var dismissedType: ThenPopoverTransition.TransitionType
     private var overlay: ThenPopoverOverlayView
     private var interactor: InteractiveTransition
-    
+
     init(presentedTransition: ThenPopoverTransition.TransitionType, dismissedTransition: ThenPopoverTransition.TransitionType? = nil, overlay: ThenPopoverOverlayView, interactor: InteractiveTransition) {
-        self.presentedType = presentedTransition
-        self.dismissedType = dismissedTransition ?? presentedTransition
+        presentedType = presentedTransition
+        dismissedType = dismissedTransition ?? presentedTransition
         self.overlay = overlay
         self.interactor = interactor
         super.init()
     }
-    
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+
+    func presentationController(forPresented presented: UIViewController, presenting _: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return TransitionController(overlay: overlay, presentedViewController: presented, presenting: source)
     }
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    func animationController(forPresented _: UIViewController, presenting _: UIViewController, source _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return presentedType.transition
     }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    func animationController(forDismissed _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return dismissedType.transition
     }
-    
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+
+    func interactionControllerForDismissal(using _: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
     }
 }

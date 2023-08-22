@@ -1,7 +1,6 @@
 import UIKit
 
 internal extension UIImageView {
-    
     /// Calculates the height of the the UIImageView has to have so the image is displayed correctly
     /// - Returns: Height to set on the imageView
     func popoverHeight() -> CGFloat {

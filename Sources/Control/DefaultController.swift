@@ -1,11 +1,10 @@
 import UIKit
 
-final public class ThenPopoverDefaultController: UIViewController {
-    
+public final class ThenPopoverDefaultController: UIViewController {
     public var standardView: ThenPopoverDefaultView {
-        return view as! ThenPopoverDefaultView
+        return view as! ThenPopoverDefaultView // swiftlint:disable:this force_cast
     }
-    
+
     override public func loadView() {
         super.loadView()
         view = ThenPopoverDefaultView(frame: .zero)
@@ -13,11 +12,10 @@ final public class ThenPopoverDefaultController: UIViewController {
 }
 
 public extension ThenPopoverDefaultController {
-    
     // MARK: - Setter / Getter
-    
+
     // MARK: Content
-    
+
     /// The popup image
     var image: UIImage? {
         get { return standardView.imageView.image }
@@ -26,7 +24,7 @@ public extension ThenPopoverDefaultController {
             standardView.imageHeightConstraint?.constant = standardView.imageView.popoverHeight()
         }
     }
-    
+
     /// The title text of the popup
     var titleText: String? {
         get { return standardView.titleLabel.text }
@@ -35,7 +33,7 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     /// The message text of the popup
     var messageText: String? {
         get { return standardView.messageLabel.text }
@@ -44,9 +42,9 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     // MARK: Appearance
-    
+
     /// The font and size of the title label
     var titleFont: UIFont {
         get { return standardView.titleFont }
@@ -55,7 +53,7 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     /// The color of the title label
     var titleColor: UIColor? {
         get { return standardView.titleLabel.textColor }
@@ -64,7 +62,7 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     /// The text alignment of the title label
     var titleTextAlignment: NSTextAlignment {
         get { return standardView.titleTextAlignment }
@@ -73,16 +71,16 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     /// The font and size of the body label
     var messageFont: UIFont {
-        get { return standardView.messageFont}
+        get { return standardView.messageFont }
         set {
             standardView.messageFont = newValue
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     /// The color of the message label
     var messageColor: UIColor? {
         get { return standardView.messageColor }
@@ -91,7 +89,7 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     /// The text alignment of the message label
     var messageTextAlignment: NSTextAlignment {
         get { return standardView.messageTextAlignment }
@@ -100,10 +98,9 @@ public extension ThenPopoverDefaultController {
             standardView.layoutIfNeededAnimated()
         }
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         standardView.imageHeightConstraint?.constant = standardView.imageView.popoverHeight()
     }
 }
-

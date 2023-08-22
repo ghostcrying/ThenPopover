@@ -105,7 +105,7 @@ enum PopoverType: CaseIterable, Identifiable {
         //
         switch self {
         case .default:
-            self.handleDefault(.scale)
+            self.handleDefault(.default)
         case .image:
             let title = "Default Title"
             let message = "Message Default view"
@@ -130,7 +130,7 @@ enum PopoverType: CaseIterable, Identifiable {
             UIApplication.shared.window?.rootViewController?.present(popup, animated: true, completion: nil)
         case .custom:
             // PopoverController: must have height proxy so it can calculate the real height
-            let popup = ThenPopover(PopoverController(), axis: .horizontal, presented: .default)
+            let popup = ThenPopover(PopoverController(), axis: .horizontal, presented: .default, width: .custom(100))
             
             let buttonOne = ThenPopoverAction.Cancel(title: "CANCEL", height: 60) { print("Click the Cancel the custom popover.")
             }
